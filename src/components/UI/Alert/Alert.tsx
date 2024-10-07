@@ -1,5 +1,4 @@
 import React from 'react';
-import './Alert.css';
 
 interface AlertProps {
   type: 'primary' | 'success' | 'danger' | 'warning';
@@ -8,13 +7,18 @@ interface AlertProps {
 }
 
 const Alert: React.FC<AlertProps> = ({ type, onDismiss, children }) => {
+  const alertClasses = `alert alert-${type} d-flex justify-content-between align-items-center mt-4`;
+
   return (
-    <div className={`alert alert-${type}`}>
-      {children}
+    <div className={alertClasses}>
+      <span>{children}</span>
       {onDismiss && (
-        <button className="alert-close" onClick={onDismiss}>
-          Закрыть
-        </button>
+        <button
+          type="button"
+          className="btn-close"
+          aria-label="Close"
+          onClick={onDismiss}
+        ></button>
       )}
     </div>
   );
