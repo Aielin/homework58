@@ -7,11 +7,15 @@ interface AlertProps {
   children: React.ReactNode;
 }
 
-const Alert:React.FC<AlertProps> = ({ type, onDismiss, children }) => {
+const Alert: React.FC<AlertProps> = ({ type, onDismiss, children }) => {
   return (
-    <div className={`alert alert-${type}`} role="alert">
-      <span>{children}</span>
-      {onDismiss && <button onClick={onDismiss}>Закрыть</button>}
+    <div className={`alert alert-${type}`}>
+      {children}
+      {onDismiss && (
+        <button className="alert-close" onClick={onDismiss}>
+          Закрыть
+        </button>
+      )}
     </div>
   );
 };

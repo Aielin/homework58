@@ -1,8 +1,10 @@
 .alert {
-  padding: 10px 20px;
+  padding: 15px;
+  border-radius: 4px;
   margin: 10px 0;
-  border-radius: 5px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .alert-primary {
@@ -25,13 +27,10 @@
   color: #856404;
 }
 
-.alert button {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+.alert-close {
   background: none;
   border: none;
-  color: inherit;
+  font-weight: bold;
   cursor: pointer;
+  color: #000;
 }
